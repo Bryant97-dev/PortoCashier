@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.uc.portocashier.model.HomeActivity"></activity>
-        <activity android:name="com.uc.portocashier.directory.AdapterUser" />
-        <activity android:name="com.uc.portocashier.model.SimpanData" />
-        <activity android:name="com.uc.portocashier.AddUserActivity" />
-        <activity android:name="com.uc.portocashier.model.User" />
+        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".directory.AdapterUser" />
+        <activity android:name=".model.SimpanData" />
+        <activity android:name=".AddUserActivity" />
+        <activity android:name=".model.User" />
         <activity android:name=".model" />
-        <activity android:name="com.uc.portocashier.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
