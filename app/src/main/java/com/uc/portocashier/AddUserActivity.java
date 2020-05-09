@@ -64,7 +64,7 @@ public class AddUserActivity<dialog> extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                      @Override
                       public void run() {
-                         Intent intent = new Intent(AddUserActivity.this, MainActivity.class);
+                         Intent intent = new Intent(AddUserActivity.this, HomeActivity.class);
                          dialog.cancel();
                          int a1 = Integer.parseInt(Age);
                          int a2 =Integer.parseInt(totals);
