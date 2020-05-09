@@ -1,12 +1,7 @@
-package com.uc.uts_protech.model;
+package com.uc.portocashier.model;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import com.uc.uts_protech.R;
 
 public class User implements Parcelable{
     private String nama;

@@ -1,14 +1,11 @@
-package com.uc.uts_protech.model;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.uc.portocashier.model;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.uc.uts_protech.R;
+import com.uc.portocashier.R;
 
 import java.util.ArrayList;
 

@@ -1,14 +1,12 @@
-package com.uc.uts_protech;
+package com.uc.portocashier;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.app.ActionBar;
 import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.Intent;
-import android.location.Address;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,15 +14,13 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
-import com.uc.uts_protech.model.Output;
-import com.uc.uts_protech.model.SimpanData;
-import com.uc.uts_protech.model.User;
+import com.uc.portocashier.model.Output;
+import com.uc.portocashier.model.SimpanData;
+import com.uc.portocashier.model.User;
 
 public class AddUserActivity<dialog> extends AppCompatActivity {
     TextInputLayout fname, age, address,total;

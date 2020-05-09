@@ -1,19 +1,17 @@
-package com.uc.uts_protech.directory;
+package com.uc.portocashier.directory;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.uc.uts_protech.R;
-import com.uc.uts_protech.model.User;
+import com.uc.portocashier.R;
+import com.uc.portocashier.model.User;
 
 import java.util.ArrayList;
 

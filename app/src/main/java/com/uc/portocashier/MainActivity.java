@@ -1,4 +1,4 @@
-package com.uc.uts_protech;
+package com.uc.portocashier;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
@@ -16,12 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.uc.uts_protech.directory.AdapterUser;
-import com.uc.uts_protech.model.User;
+import com.uc.portocashier.directory.AdapterUser;
+import com.uc.portocashier.model.User;
 
 import java.util.ArrayList;
 
-import static com.uc.uts_protech.model.SimpanData.list;
+import static com.uc.portocashier.model.SimpanData.list;
 
 public class MainActivity extends AppCompatActivity {
     FloatingActionButton button;

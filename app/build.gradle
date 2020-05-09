@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.3"
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
-        applicationId "com.uc.uts_protech"
+        applicationId "com.uc.portocashier"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
