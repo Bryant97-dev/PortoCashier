@@ -1,30 +1,29 @@
-package com.uc.uts_protech;
+package com.uc.portocashier;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.app.ActionBar;
 import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.Intent;
-import android.location.Address;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
-import com.uc.uts_protech.model.Output;
-import com.uc.uts_protech.model.SimpanData;
-import com.uc.uts_protech.model.User;
+import com.uc.portocashier.model.Output;
+import com.uc.portocashier.model.SimpanData;
+import com.uc.portocashier.model.User;
 
 public class AddUserActivity<dialog> extends AppCompatActivity {
     TextInputLayout fname, age, address,total;
@@ -33,6 +32,9 @@ public class AddUserActivity<dialog> extends AppCompatActivity {
     TextView outputtotal;
     Dialog dialog;
     String test;
+    //Spinner sp;
+   private static int diskon;
+
 
     //public final static String total_beli = ("com.uc.uts_protech.total_beli");
 
@@ -47,7 +49,9 @@ public class AddUserActivity<dialog> extends AppCompatActivity {
         address= findViewById(R.id.input_address);
         button = findViewById(R.id.check_button);
         total = (TextInputLayout) findViewById(R.id.input_pay);
+
        // outputtotal =findViewById(R.id.input_total_harga);
+
 
         Toolbar toolbar2 = findViewById(R.id.toolbar_add_user);
 
@@ -60,6 +64,8 @@ public class AddUserActivity<dialog> extends AppCompatActivity {
         address.getEditText().addTextChangedListener(textwacther);
         total.getEditText().addTextChangedListener(textwacther);
 
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
@@ -68,11 +74,17 @@ public class AddUserActivity<dialog> extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                      @Override
                       public void run() {
-                         Intent intent = new Intent(AddUserActivity.this, MainActivity.class);
+                         Intent intent = new Intent(AddUserActivity.this, HomeActivity.class);
                          dialog.cancel();
+
                          int a1 = Integer.parseInt(Age);
-                         int a2 =Integer.parseInt(totals);
-                         int harga=a1*a2;
+                         if(totals.equalsIgnoreCase("gojek")){
+                             diskon = a1*30/100;
+                         }else if(totals.equalsIgnoreCase("gograb")){
+                             diskon = a1*20/100;
+                         }
+                        // int a2 =Integer.parseInt(totals);
+                         int harga = a1-diskon ;
                          test =String.valueOf(harga);
                          Output output = new Output(test);
                          User user = new User(Name, test, Address);
@@ -125,7 +137,7 @@ public class AddUserActivity<dialog> extends AppCompatActivity {
 
 
 
-            button.setEnabled(!Name.isEmpty() && !Age.isEmpty() && !Address.isEmpty()&& !totals.isEmpty() );
+            button.setEnabled(!Name.isEmpty() && !Age.isEmpty() && !Address.isEmpty());
         }
 
         @Override

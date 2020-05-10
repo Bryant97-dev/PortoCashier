@@ -1,4 +1,4 @@
-package com.uc.uts_protech.model;
+package com.uc.portocashier.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

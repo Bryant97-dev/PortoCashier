@@ -1,4 +1,4 @@
-package com.uc.uts_protech;
+package com.uc.portocashier;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
@@ -16,14 +16,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.uc.uts_protech.directory.AdapterUser;
-import com.uc.uts_protech.model.User;
+import com.uc.portocashier.directory.AdapterUser;
+import com.uc.portocashier.model.User;
 
 import java.util.ArrayList;
 
-import static com.uc.uts_protech.model.SimpanData.list;
+import static com.uc.portocashier.model.SimpanData.list;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
     FloatingActionButton button;
     ArrayList <User> listUsers = list;
     ArrayList<Integer> out  ;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
         rv = findViewById(R.id.recycler_view);
         noData = findViewById(R.id.no_data);
         button = findViewById(R.id.button);
@@ -47,16 +47,16 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-       // Bundle bundle = getIntent().getExtras();
+        // Bundle bundle = getIntent().getExtras();
 
         //if (!bundle.getString("total beli").equals(null) ){
         //    test1= bundle.getString("total beli");
 
-       // }
+        // }
 
-       // Bundle extra = getIntent().getExtras();
+        // Bundle extra = getIntent().getExtras();
         //test1= extra.getString("total beli");
-       Intent intent = getIntent();
+        Intent intent = getIntent();
         test1=intent.getStringExtra("total beli");
         beli1=intent.getStringExtra("pembeli");
         if (!TextUtils.isEmpty(test1) && TextUtils.isDigitsOnly(test1)) {
@@ -85,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
         }else{
             total = total + test2 - kembalian;
         }
-       // for(int i = 0;i<out.size();i++) {
-         //   out.set(i, total);
-       // }
+        // for(int i = 0;i<out.size();i++) {
+        //   out.set(i, total);
+        // }
         Penjualantotal = String.valueOf(total);
         totalpenjualan.setText(Penjualantotal);
         //test2 = Integer.valueOf(test1);
@@ -101,9 +101,9 @@ public class MainActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddUserActivity.class );
+                Intent intent = new Intent(HomeActivity.this, AddUserActivity.class );
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this);
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this);
                 startActivity(intent, options.toBundle());
 
             }
@@ -125,8 +125,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void showUsers(ArrayList<User> listUsers) {
         rv.setAdapter(null);
-        rv.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-        AdapterUser adapter = new AdapterUser(MainActivity.this);
+        rv.setLayoutManager(new LinearLayoutManager(HomeActivity.this));
+        AdapterUser adapter = new AdapterUser(HomeActivity.this);
         adapter.setListUser(list);
         rv.setAdapter(adapter);
 
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(b);
         }
         this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(MainActivity.this, "Press back once more to close the apps!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(HomeActivity.this, "Press back once more to close the apps!", Toast.LENGTH_SHORT).show();
     }
 }
 
