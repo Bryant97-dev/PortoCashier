@@ -5,13 +5,13 @@
     <string name="name4">No Data</string>
     <string name="nama5">User</string>
     <string name="nama7">Loading</string>
-    <string name="add">Add New User</string>
+    <string name="add">Add New Note</string>
     <string name="hpro">Harga Produk</string>
     <string name="ppro">Pembayaran</string>
     <string name="tharga">Total Harga</string>
     <string name="jpro">Jumlah Produk</string>
     <string name="tpenjualan">Total Penjualan</string>
     <string name="string6">Penjualan Produk</string>
-    <string name="online">ketik gojek/gograb jika menggunakan</string>
-    <string name="online2">ketik gojek/gograb jika menggunakan pembayaran ini</string>
+    <string name="online">ketik gofood / grabfood</string>
+    <string name="online2">ketik gofood / grabfood</string>
 </resources>

@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.Intent;
+import android.icu.util.Output;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,7 +22,6 @@ import android.widget.TextView;
 
 
 import com.google.android.material.textfield.TextInputLayout;
-import com.uc.portocashier.model.Output;
 import com.uc.portocashier.model.SimpanData;
 import com.uc.portocashier.model.User;
 
@@ -78,9 +78,9 @@ public class AddUserActivity<dialog> extends AppCompatActivity {
                          dialog.cancel();
 
                          int a1 = Integer.parseInt(Age);
-                         if(totals.equalsIgnoreCase("gojek")){
+                         if(totals.equalsIgnoreCase("grabfood")){
                              diskon = a1*30/100;
-                         }else if(totals.equalsIgnoreCase("gograb")){
+                         }else if(totals.equalsIgnoreCase("gofood")){
                              diskon = a1*20/100;
                          }
                         // int a2 =Integer.parseInt(totals);
