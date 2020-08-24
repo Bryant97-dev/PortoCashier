@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PortoCashier</string>
-    <string name="nama1">Add User</string>
-    <string name="nama2">Add User</string>
+    <string name="nama1">Add New Note</string>
+    <string name="nama2">Add New Note</string>
     <string name="name4">No Data</string>
     <string name="nama5">User</string>
     <string name="nama7">Loading</string>
