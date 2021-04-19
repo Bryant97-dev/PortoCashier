@@ -14,10 +14,7 @@ import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 
@@ -32,11 +29,7 @@ public class AddUserActivity<dialog> extends AppCompatActivity {
     TextView outputtotal;
     Dialog dialog;
     String test;
-    //Spinner sp;
-   private static int diskon;
-
-
-    //public final static String total_beli = ("com.uc.uts_protech.total_beli");
+    private static int diskon;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -49,22 +42,12 @@ public class AddUserActivity<dialog> extends AppCompatActivity {
         address= findViewById(R.id.input_address);
         button = findViewById(R.id.check_button);
         total = (TextInputLayout) findViewById(R.id.input_pay);
-
-       // outputtotal =findViewById(R.id.input_total_harga);
-
-
         Toolbar toolbar2 = findViewById(R.id.toolbar_add_user);
-
-        //setSupportActionBar(toolbar2);
-      // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         fname.getEditText().addTextChangedListener(textwacther);
         age.getEditText().addTextChangedListener(textwacther);
         address.getEditText().addTextChangedListener(textwacther);
         total.getEditText().addTextChangedListener(textwacther);
-
-
 
         button.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.P)
@@ -83,7 +66,7 @@ public class AddUserActivity<dialog> extends AppCompatActivity {
                          }else if(totals.equalsIgnoreCase("gofood")){
                              diskon = a1*20/100;
                          }
-                        // int a2 =Integer.parseInt(totals);
+
                          int harga = a1-diskon ;
                          test =String.valueOf(harga);
                          Output output = new Output(test);
@@ -104,7 +87,6 @@ public class AddUserActivity<dialog> extends AppCompatActivity {
         toolbar2.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //finish();
                 onBackPressed();
             }
         });
@@ -123,20 +105,6 @@ public class AddUserActivity<dialog> extends AppCompatActivity {
             Age = age.getEditText().getText().toString().trim();
             Address = address.getEditText().getText().toString().trim();
             totals = total.getEditText().getText().toString().trim();
-
-            /*outputtotal.setText((Integer.parseInt(age.toString())*100).toString());
-            int a2 = Integer.parseInt(total.toString());
-            //int harga = a1+a2;
-            if(a1 != 0){
-                outputtotal.setVisibility(View.INVISIBLE);
-            }else{
-                outputtotal.setVisibility(View.VISIBLE);
-                outputtotal.setText(String.valueOf(a1+a2));
-            }*/
-
-
-
-
             button.setEnabled(!Name.isEmpty() && !Age.isEmpty() && !Address.isEmpty());
         }
 

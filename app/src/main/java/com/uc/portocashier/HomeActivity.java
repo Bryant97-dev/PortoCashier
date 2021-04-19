@@ -34,7 +34,6 @@ public class HomeActivity extends AppCompatActivity {
     int test2,beli2,kembalian;
     int total=0;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,17 +44,6 @@ public class HomeActivity extends AppCompatActivity {
         totalpenjualan =findViewById(R.id.total_harga);
         ActionBar actionBar = getSupportActionBar();
 
-
-
-        // Bundle bundle = getIntent().getExtras();
-
-        //if (!bundle.getString("total beli").equals(null) ){
-        //    test1= bundle.getString("total beli");
-
-        // }
-
-        // Bundle extra = getIntent().getExtras();
-        //test1= extra.getString("total beli");
         Intent intent = getIntent();
         test1=intent.getStringExtra("total beli");
         beli1=intent.getStringExtra("pembeli");
@@ -85,17 +73,9 @@ public class HomeActivity extends AppCompatActivity {
         }else{
             total = total + test2 - kembalian;
         }
-        // for(int i = 0;i<out.size();i++) {
-        //   out.set(i, total);
-        // }
+
         Penjualantotal = String.valueOf(total);
         totalpenjualan.setText(Penjualantotal);
-        //test2 = Integer.valueOf(test1);
-        //test2= intent.getIntExtra(AddUserActivity.total_beli);
-       /* total = total + test2;
-        total2 = String.valueOf(total);
-        totalpenjualan.setText(total2);*/
-        //Interger test1 = Integer.parseInt();
 
         button.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -117,12 +97,6 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-   /* public void setTextInTextView(){
-        tv = (TextView) findViewById(R.id.rate);
-        Bundle extra = getIntent().getExtras();
-        tv.setText(""+extra.getString("key"));
-    }*/
-
     private void showUsers(ArrayList<User> listUsers) {
         rv.setAdapter(null);
         rv.setLayoutManager(new LinearLayoutManager(HomeActivity.this));
@@ -131,7 +105,6 @@ public class HomeActivity extends AppCompatActivity {
         rv.setAdapter(adapter);
 
     }
-
 
     public boolean doubleBackToExitPressedOnce = false;
     @Override
